@@ -10,7 +10,7 @@ import 'rxjs/add/operator/catch';
 import { environment } from '../../environments/environment';
 import { User } from './../models/user.model';
 
-const url = 'http://localhost:4200';
+const url = 'http://localhost:3000';
 
 @Injectable()
 export class AuthService {

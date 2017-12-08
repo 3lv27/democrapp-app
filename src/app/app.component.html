@@ -1,22 +1,22 @@
 <header class="site-header">
 
   <h1 class="site-title">
-    <a [routerLink]="['/tasks']">todo</a>
+    <a [routerLink]="['/']">DemocrApp</a>
   </h1>
 
-  <div [ngClass]="{'is-user': user, 'is-anon': anon}">
-    <div *ngIf="loading">
+  <!-- <div [ngClass]="{'is-user': user, 'is-anon': anon}"> -->
+    <!-- <div *ngIf="loading">
       <span class="username text">loading...</span>
-    </div>
+    </div> -->
     <div *ngIf="!loading && !!user">
       <a (click)="profile()">{{user.username}}</a>
       <a (click)="logout()">logout</a>
     </div>
-    <div *ngIf="!loading && anon">
+    <!-- <div *ngIf="!loading && anon"> -->
       <a (click)="login()">login</a>
       <a (click)="signup()">signup</a>
-    </div>
-  </div>
+    <!-- </div> -->
+  <!-- </div> -->
   <hr/>
 </header>
 
@@ -26,9 +26,10 @@
   <hr/>
   <nav>
     <a [routerLink]="['/polls']">polls</a>
-    <a [routerLink]="['/poll/create']">create one</a>
-    <div *ngIf="!loading && !!user"><
-      <a [routerLink]="['/me']">your polls</a>/div>
+    <a [routerLink]="['/polls/create']">create one</a>
+    <div *ngIf="!loading && !!user">
+      <a [routerLink]="['/me']">your polls</a>
+    </div>
     <div *ngIf="!loading && anon">
       <a [routerLink]="['/signup']">start now</a>
     </div>

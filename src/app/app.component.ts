@@ -2,6 +2,9 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
 
+import { User } from './models/user.model';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,7 +13,7 @@ import { AuthService } from './services/auth.service';
 export class AppComponent implements OnInit {
   loading = true;
   anon: boolean;
-  user: any;
+  user: User;
 
   constructor(
     private authService: AuthService,
