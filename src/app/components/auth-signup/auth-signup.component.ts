@@ -12,7 +12,7 @@ import { AuthService } from '../../services/auth.service';
 export class AuthSignupComponent {
 
   user = new User({
-    username: '',
+    name: '',
     email: '',
     password: ''
   });

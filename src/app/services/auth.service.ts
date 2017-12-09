@@ -33,7 +33,7 @@ export class AuthService {
   signup(user: User) {
     const options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.post(url + '/signup', user, options)
+    return this.http.post(url + '/auth/signup', user, options)
       .map(res => {
         this.setUser(new User(res.json()));
         return user;
@@ -43,7 +43,7 @@ export class AuthService {
   login(user: User) {
     const options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.post(url + '/login', user, options)
+    return this.http.post(url + '/auth/login', user, options)
       .map(res => {
         this.setUser(new User(res.json()));
         return user;
@@ -53,7 +53,7 @@ export class AuthService {
   logout() {
     const options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.post(url + '/logout', {}, options)
+    return this.http.post(url + '/auth/logout', {}, options)
     .map(res => {
       this.setUser();
       return null;
@@ -66,7 +66,7 @@ export class AuthService {
     // }
     const options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.get(url + '/me', options)
+    return this.http.get(url + '/auth/me', options)
       .toPromise()
       .then(res => {
         const user = new User(res.json());
