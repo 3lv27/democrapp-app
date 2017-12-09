@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: '', component: PageHomeComponent },
   { path: 'login', canActivate: [RequireAnonGuard], component: PageLoginComponent },
   { path: 'signup', canActivate: [RequireAnonGuard], component: PageSignupComponent },
-  { path: 'polls', canActivate: [RequireLoginGuard], component: PagePollsComponent },
+  { path: 'polls', component: PagePollsComponent },
   { path: 'polls/create', canActivate: [RequireLoginGuard], component: PagePollCreateComponent },
   { path: 'polls/:id', canActivate: [RequireLoginGuard], component: PagePollDetailComponent },
   { path: 'me', component: PageMeComponent }

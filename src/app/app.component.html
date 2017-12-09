@@ -9,7 +9,7 @@
       <span class="username text">loading...</span>
     </div>
     <div *ngIf="!loading && !!user">
-      <a (click)="profile()">{{user.username}}</a>
+      <a (click)="profile()">{{user.name}}</a>
       <a (click)="logout()">logout</a>
     </div>
     <div *ngIf="!loading && anon">
@@ -26,8 +26,8 @@
   <hr/>
   <nav>
     <a [routerLink]="['/polls']">polls</a>
-    <a [routerLink]="['/polls/create']">create one</a>
     <div *ngIf="!loading && !!user">
+      <a [routerLink]="['/polls/create']">create one</a>
       <a [routerLink]="['/me']">your polls</a>
     </div>
     <div *ngIf="!loading && anon">
