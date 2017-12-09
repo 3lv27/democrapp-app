@@ -4,25 +4,25 @@
     <a [routerLink]="['/']">DemocrApp</a>
   </h1>
 
-  <!-- <div [ngClass]="{'is-user': user, 'is-anon': anon}"> -->
-    <!-- <div *ngIf="loading">
+  <div [ngClass]="{'is-user': user, 'is-anon': anon}">
+    <div *ngIf="loading">
       <span class="username text">loading...</span>
-    </div> -->
+    </div>
     <div *ngIf="!loading && !!user">
       <a (click)="profile()">{{user.username}}</a>
       <a (click)="logout()">logout</a>
     </div>
-    <!-- <div *ngIf="!loading && anon"> -->
+    <div *ngIf="!loading && anon">
       <a (click)="login()">login</a>
       <a (click)="signup()">signup</a>
-    <!-- </div> -->
-  <!-- </div> -->
+    </div>
+  </div>
   <hr/>
 </header>
 
 <router-outlet></router-outlet>
 
-<!-- <footer class="site-footer">
+<footer class="site-footer">
   <hr/>
   <nav>
     <a [routerLink]="['/polls']">polls</a>
@@ -35,4 +35,4 @@
     </div>
   </nav>
   <p>copyright bcnweb0817</p>
-</footer> -->
+</footer>
