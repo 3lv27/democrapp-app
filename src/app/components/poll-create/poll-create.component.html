@@ -8,12 +8,14 @@
     </div>
   </div>
 
+
   <div *ngFor="let option of formOptions" class="field" [ngClass]="{'has-error': feedbackEnabled}">
     <input type="answer" [(ngModel)]="option.text" placeholder="Option" [ngModelOptions]="{standalone: true}" />
     <button (click)="handleDelete(option)">Delete</button>
   </div>
+  
   <button type="button" (click)="addOption()">Add option</button>
-
+  
 
   <div class="field submit">
     <button type="submit">Submit</button>
