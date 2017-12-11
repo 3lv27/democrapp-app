@@ -28,6 +28,7 @@ import { AuthService } from './services/auth.service';
 
 import { RequireLoginGuard } from './guards/require-login.guard';
 import { RequireAnonGuard } from './guards/require-anon.guard';
+import { PollCreateComponent } from './components/poll-create/poll-create.component';
 
 const routes: Routes = [
   { path: '', component: PageHomeComponent },
@@ -57,7 +58,8 @@ const routes: Routes = [
     PollVoteComponent,
     PollResultsComponent,
     AuthSignupComponent,
-    AuthLoginComponent
+    AuthLoginComponent,
+    PollCreateComponent
   ],
   imports: [
     BrowserModule,
