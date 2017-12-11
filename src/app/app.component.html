@@ -8,7 +8,7 @@
     <div *ngIf="loading">
       <span class="username text">loading...</span>
     </div>
-    <div *ngIf="!loading && !!user">
+     <div *ngIf="!loading && !!user"> 
       <a (click)="profile()">{{user.name}}</a>
       <a (click)="logout()">logout</a>
     </div>
