@@ -9,7 +9,7 @@ import 'rxjs/add/operator/catch';
 import { environment } from '../../environments/environment';
 import { Poll } from './../models/poll.model';
 
-const url = 'http://localhost:3000';
+const apiUrl = environment.apiUrl;
 
 @Injectable()
 export class PollService {
@@ -19,7 +19,7 @@ export class PollService {
   createPoll(poll) {
     const options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.post(url + '/polls', poll, options)
+    return this.http.post(apiUrl + '/polls', poll, options)
       .map(res => {
         return res.json();
       });
@@ -28,7 +28,7 @@ export class PollService {
   getOwnersPoll() {
     const options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.get(url + '/polls/active/owner', options)
+    return this.http.get(apiUrl + '/polls/active/owner', options)
       .map(res => res.json());
   }
 
@@ -36,21 +36,21 @@ export class PollService {
   getPoll(id) {
     const options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.get(url + `/polls/${id}`, options)
+    return this.http.get(apiUrl + `/polls/${id}`, options)
       .map(res => res.json());
     }
 
   getPollOptions(id) {
     const options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.get(url + `/polls/${id}/options`, options)
+    return this.http.get(apiUrl + `/polls/${id}/options`, options)
       .map(res => res.json());
   }
 
   getPollList() {
     const options = new RequestOptions();
     options.withCredentials = true;
-    return this.http.get(url + '/polls/active', options)
+    return this.http.get(apiUrl + '/polls/active', options)
       .map(res => res.json());
   }
 }
