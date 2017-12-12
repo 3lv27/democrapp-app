@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PollService } from '../../services/poll.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
 
 @Component({
   selector: 'app-poll-card',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PollCardComponent implements OnInit {
 
-  constructor() { }
+    pollData: any;
+    id: any;
+  constructor(private pollService: PollService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.idPoll();
+    this.getPoll();
+    console.log(this.id);
+  }
+
+  getPoll() {
+    this.pollService.getPoll(this.id)
+      .subscribe((data) => this.pollData = data );
+  }
+
+  idPoll() {
+    this.activatedRoute.params
+      .subscribe( params => {
+        this.id = params['id'];
+      });
   }
 
 }

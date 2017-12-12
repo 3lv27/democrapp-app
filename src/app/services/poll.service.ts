@@ -24,4 +24,12 @@ export class PollService {
         return res.json();
       });
   }
+
+
+  getPoll(id) {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(url + `/polls/${id}`, options)
+      .map(res => res.json());
+    }
 }

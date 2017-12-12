@@ -45,7 +45,7 @@ export class PollCreateComponent implements OnInit {
       };
 
       this.pollService.createPoll(poll)
-        .subscribe(() => this.router.navigate(['/polls']), (err) => this.error = err );
+        .subscribe((data) => this.router.navigate(['/polls/', data.id ]), (err) => this.error = err );
     }
   }
 
