@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://foobar-server.herokuapp.com'
+  apiUrl: 'http://localhost:3000'
 };
