@@ -25,6 +25,13 @@ export class PollService {
       });
   }
 
+  getOwnersPoll() {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(url + '/polls/active/owner', options)
+      .map(res => res.json());
+  }
+
 
   getPoll(id) {
     const options = new RequestOptions();
@@ -32,4 +39,18 @@ export class PollService {
     return this.http.get(url + `/polls/${id}`, options)
       .map(res => res.json());
     }
+
+  getPollOptions(id) {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(url + `/polls/${id}/options`, options)
+      .map(res => res.json());
+  }
+
+  getPollList() {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+    return this.http.get(url + '/polls/active', options)
+      .map(res => res.json());
+  }
 }

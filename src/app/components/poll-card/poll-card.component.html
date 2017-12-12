@@ -1,3 +1,13 @@
-<p>
-  {{pollData | json}}
-</p>
+{{options}}
+<div *ngIf="pollData">
+
+<h1>{{pollData.title}}</h1>
+
+
+
+  <li *ngFor="let answers of options">
+    <button>{{answers}} </button>
+  </li>
+</div>
+
+

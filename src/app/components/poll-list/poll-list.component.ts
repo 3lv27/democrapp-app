@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PollService } from '../../services/poll.service';
 
 @Component({
   selector: 'app-poll-list',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PollListComponent implements OnInit {
 
-  constructor() { }
+  polls = null;
+  constructor(private pollService: PollService) { }
 
   ngOnInit() {
+    this.pollService.getPollList()
+      .subscribe(data => this.polls = data);
   }
-
 }

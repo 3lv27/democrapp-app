@@ -11,18 +11,26 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 export class PollCardComponent implements OnInit {
 
     pollData: any;
+    options: any;
+
     id: any;
+
   constructor(private pollService: PollService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.idPoll();
     this.getPoll();
-    console.log(this.id);
+    this.getPollOptions();
   }
 
   getPoll() {
     this.pollService.getPoll(this.id)
       .subscribe((data) => this.pollData = data );
+  }
+
+  getPollOptions() {
+    this.pollService.getPollOptions(this.id)
+      .subscribe((data) => this.options = data);
   }
 
   idPoll() {

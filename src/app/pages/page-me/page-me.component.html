@@ -1,3 +1,8 @@
-<p>
-  page-me works!
-</p>
+<h2>Your Polls</h2>
+<ul style="list-style: none">
+  <div *ngIf="myPolls">
+    <li *ngFor="let poll of myPolls">
+      <a [routerLink]="['/polls',poll._id]">{{poll.title}} </a>
+    </li>
+  </div>
+</ul>
