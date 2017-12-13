@@ -19,7 +19,22 @@ export class PollService {
   createPoll(poll) {
     const options = new RequestOptions();
     options.withCredentials = true;
+    
     return this.http.post(apiUrl + '/polls', poll, options)
+      .map(res => {
+        return res.json();
+      });
+  }
+
+  submitVote(id, answer: number) {
+    const options = new RequestOptions();
+    options.withCredentials = true;
+
+    const data = {
+      answer: answer
+    };
+
+    return this.http.post(apiUrl + `/polls/${id}/votes`, data, options)
       .map(res => {
         return res.json();
       });
@@ -53,4 +68,5 @@ export class PollService {
     return this.http.get(apiUrl + '/polls/active', options)
       .map(res => res.json());
   }
+
 }

@@ -1,1 +1,10 @@
-<app-poll-card></app-poll-card>
+<div *ngIf="poll">
+    <h1>{{poll.title}}</h1>
+
+    <div *ngIf="!userAlreadyVoted">
+        <app-poll-vote [poll]="poll" (submitVote)="handleVote($event)"></app-poll-vote>
+    </div>
+    <div *ngIf="userAlreadyVoted">
+        <app-poll-results [poll]="poll"></app-poll-results>
+    </div>
+</div>

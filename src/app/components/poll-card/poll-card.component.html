@@ -1,13 +1,6 @@
-
-<div *ngIf="pollData">
-
-<h1>{{pollData.title}}</h1>
-
-
-
-  <li *ngFor="let answers of options">
-    <button>{{answers}} </button>
-  </li>
+<div *ngIf="poll">
+    <a [routerLink]="['/polls',poll._id]">
+        <h1>{{poll.title}}</h1>
+        <p>votes: {{poll.votes.length}}</p>
+    </a>
 </div>
-
-

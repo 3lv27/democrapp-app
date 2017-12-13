@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'app-poll-vote',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PollVoteComponent implements OnInit {
 
+  @Input() poll: any;
+  @Output() submitVote = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  onVote(answer: number) {
+    this.submitVote.emit(answer);
   }
 
 }

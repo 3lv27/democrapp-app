@@ -1,7 +1,7 @@
 <ul style="list-style: none">
-  <div *ngIf="polls">
-    <li *ngFor="let poll of polls">
-      <a [routerLink]="['/polls',poll._id]">{{poll.title}} </a>
-    </li>
-  </div>
+    <div *ngIf="polls">
+        <li *ngFor="let poll of polls">
+            <app-poll-card [poll]="poll"></app-poll-card>
+        </li>
+    </div>
 </ul>

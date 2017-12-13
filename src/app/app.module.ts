@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 
-
 import { AppComponent } from './app.component';
 
 import { PageHomeComponent } from './pages/page-home/page-home.component';
@@ -22,23 +21,23 @@ import { PollVoteComponent } from './components/poll-vote/poll-vote.component';
 import { PollResultsComponent } from './components/poll-results/poll-results.component';
 import { AuthSignupComponent } from './components/auth-signup/auth-signup.component';
 import { AuthLoginComponent } from './components/auth-login/auth-login.component';
+import { PollCreateComponent } from './components/poll-create/poll-create.component';
 
 import { PollService } from './services/poll.service';
 import { AuthService } from './services/auth.service';
 
+import { InitAuthGuard } from './guards/init-auth.guard';
 import { RequireLoginGuard } from './guards/require-login.guard';
 import { RequireAnonGuard } from './guards/require-anon.guard';
-import { PollCreateComponent } from './components/poll-create/poll-create.component';
 
 const routes: Routes = [
-  { path: '', component: PageHomeComponent },
+  { path: '', canActivate: [InitAuthGuard], component: PageHomeComponent },
   { path: 'login', canActivate: [RequireAnonGuard], component: PageLoginComponent },
   { path: 'signup', canActivate: [RequireAnonGuard], component: PageSignupComponent },
-  { path: 'polls', component: PagePollsComponent },
+  { path: 'polls', canActivate: [InitAuthGuard], component: PagePollsComponent },
   { path: 'polls/create', canActivate: [RequireLoginGuard], component: PagePollCreateComponent },
   { path: 'polls/:id', canActivate: [RequireLoginGuard], component: PagePollDetailComponent },
-  { path: 'me', component: PageMeComponent }
-
+  { path: 'me', canActivate: [RequireLoginGuard], component: PageMeComponent }
 ];
 
 
@@ -59,7 +58,7 @@ const routes: Routes = [
     PollResultsComponent,
     AuthSignupComponent,
     AuthLoginComponent,
-    PollCreateComponent
+    PollCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -68,7 +67,13 @@ const routes: Routes = [
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [PollService, AuthService, RequireLoginGuard, RequireAnonGuard],
+  providers: [
+    PollService,
+    AuthService,
+    InitAuthGuard,
+    RequireLoginGuard,
+    RequireAnonGuard,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

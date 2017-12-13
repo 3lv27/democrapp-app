@@ -1,3 +1,4 @@
-<p>
-  poll-results works!
-</p>
+
+<div *ngFor="let answer of poll.properties.options; let ix = index">
+  {{answer}} - {{votes[ix]}} votes / {{percentages[ix]}}% 
+</div>
