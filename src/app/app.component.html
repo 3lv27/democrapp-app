@@ -8,8 +8,8 @@
     <div *ngIf="loading">
       <span class="username text">loading...</span>
     </div>
-     <div *ngIf="!loading && !!user"> 
-      <a (click)="profile()">{{user.name}}</a>
+     <div class="user" *ngIf="!loading && !!user"> 
+      <a (click)="profile()"> Hello {{user.name}}!</a>
       <a (click)="logout()">logout</a>
     </div>
     <div *ngIf="!loading && anon">
@@ -17,22 +17,35 @@
       <a (click)="signup()">signup</a>
     </div>
   </div>
-  <hr/>
+
 </header>
 
 <router-outlet></router-outlet>
 
 <footer class="site-footer">
-  <hr/>
+
   <nav>
-    <a [routerLink]="['/polls']">polls</a>
-    <div *ngIf="!loading && !!user">
-      <a [routerLink]="['/polls/create']">create one</a>
-      <a [routerLink]="['/me']">your polls</a>
+    <div class="nav" *ngIf="!loading && !!user">
+      <div>
+      <a [routerLink]="['/polls']">
+        <span class="far fa-file-alt nav-icon"></span>
+      </a>
+      </div>
+      <div>
+      <a [routerLink]="['/polls/create']">
+        <span class="far fa-plus-square nav-icon add"></span>
+      </a>
+      </div>
+      <div>
+        <a [routerLink]="['/me']">
+          <span class="fas fa-user nav-icon"></span>
+        </a>
+      </div>
+      
     </div>
     <div *ngIf="!loading && anon">
+      <a [routerLink]="['/polls']">see polls</a>
       <a [routerLink]="['/signup']">start now</a>
     </div>
   </nav>
-  <p>copyright bcnweb0817</p>
 </footer>

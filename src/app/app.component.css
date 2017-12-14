@@ -1,0 +1,55 @@
+/* HEADER */
+
+.site-header {
+  height: 13vh;
+  background-image: linear-gradient(to right, #d43f8d 20%, #0250c5 100%);
+  border-bottom: solid 2px #4d37f3;
+
+}
+
+.user a {
+ color: #fff;
+ font-size: 14px;
+}
+
+.site-title {
+     margin: 0;
+}
+
+.site-title a {
+  color: #fff;
+  font-size: 40px;
+}
+
+/* MOBILE NAV */
+.site-footer {
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: -9px;
+}
+
+.nav {
+    height: 60px;
+    background-color: rgb(236, 234, 234);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;  
+}
+
+.nav-icon {
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+}
+
+.add {
+    font-size: 60px;
+    color: rgb(255, 255, 255);
+}
+.nav-icon:active {
+  color: #0250c5
+}
+
+/* BODY */

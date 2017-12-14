@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+/* -- reset -- */
+
+html {
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+ min-height: 100vh;
+ margin: 0 0 60px 0;
+  background-image: linear-gradient(to right, #d43f8e2d 20%, #0250c532 100%);
+ 
+}
+
+ ul, header, footer {
+  margin: 0;
+  padding: 0;
+}
+ a {
+text-decoration: none;
+ }
+
+
+/* -- temp -- */
+/* 
+div, header, footer {
+  border: 1px solid black;
+    
+
+} */
+
+
+/* -- general -- */
+

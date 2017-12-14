@@ -1,0 +1,11 @@
+.card {
+    background-color: #fff;
+      margin: 20px 15px;
+}
+
+div h1 {
+    padding: 99px 10px;
+    color: rgb(55, 55, 55);
+    font-size: 30px;
+    text-align: center;
+}

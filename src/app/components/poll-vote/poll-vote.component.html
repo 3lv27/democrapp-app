@@ -1,5 +1,5 @@
 <div *ngIf="poll">
   <div *ngFor="let answer of poll.properties.options; let ix = index">
-    <button (click)="onVote(ix)">{{answer}} </button>
+    <button class="result" (click)="onVote(ix)">{{answer}} </button>
   </div>
 </div>

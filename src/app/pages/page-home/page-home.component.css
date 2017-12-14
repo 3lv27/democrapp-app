@@ -1,0 +1,9 @@
+div {
+    background-image: url(https://hdwallsource.com/img/2014/9/city-background-18299-18763-hd-wallpapers.jpg);
+    display: flex;
+    background-position:  center center;
+    background-size: cover;
+    height: 400px;
+
+}
+

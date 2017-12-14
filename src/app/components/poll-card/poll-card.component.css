@@ -1,0 +1,16 @@
+div {
+    background-color: #fff;
+    margin: 10px 15px;
+}
+
+div h1 {
+    padding: 10px;
+    color: rgb(55, 55, 55);
+    font-size: 25px;
+    text-align: center;
+}
+
+div p {
+    color: blue;
+    margin-left: 75%;
+}
