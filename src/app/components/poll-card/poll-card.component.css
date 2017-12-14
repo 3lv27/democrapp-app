@@ -11,6 +11,7 @@ div h1 {
 }
 
 div p {
-    color: blue;
+    color: #4d37f3;
     margin-left: 75%;
+    padding-bottom: 3%;
 }

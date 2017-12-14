@@ -21,7 +21,7 @@ export class PollResultsComponent implements OnInit {
       this.votes[vote.answer]++;
     });
     this.poll.properties.options.forEach((answer, index) => {
-      this.percentages[index] = Math.round(this.votes[index] * 100 / this.votes.length);
+      this.percentages[index] = Math.round(this.votes[index] * 100 / this.poll.votes.length);
     });
   }
 

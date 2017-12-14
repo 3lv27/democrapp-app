@@ -1,6 +1,6 @@
 <h2>Your Polls</h2>
 <ul style="list-style: none">
-  <div *ngIf="myPolls">
+  <div class="list" *ngIf="myPolls">
     <li *ngFor="let poll of myPolls">
       <a [routerLink]="['/polls',poll._id]">{{poll.title}} </a>
     </li>

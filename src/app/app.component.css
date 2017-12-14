@@ -1,4 +1,9 @@
 /* HEADER */
+img {
+  width: 50px;
+  height: auto;
+  margin: 13px 6px -16px 16px;
+}
 
 .site-header {
   height: 13vh;
@@ -7,9 +12,28 @@
 
 }
 
+.user {
+  left: 66%;
+  position: absolute;
+  top: 9%;
+}
+
+.no-user {
+  left: 69%;
+  position: absolute;
+  top: 9%;
+}
+
+.no-user a {
+  color: #fff;
+ font-size: 13px;
+ padding-left: 5px;
+}
+
 .user a {
  color: #fff;
- font-size: 14px;
+ font-size: 13px;
+ padding-left: 5px;
 }
 
 .site-title {
@@ -18,12 +42,13 @@
 
 .site-title a {
   color: #fff;
-  font-size: 40px;
+  font-size: 27px;
+  padding-bottom: 10px;
 }
 
 /* MOBILE NAV */
 .site-footer {
-  height: 70px;
+  height: 54px;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -31,7 +56,7 @@
 }
 
 .nav {
-    height: 60px;
+    height: 45px;
     background-color: rgb(236, 234, 234);
     display: flex;
     flex-direction: row;
@@ -40,16 +65,29 @@
 }
 
 .nav-icon {
-    font-size: 40px;
-    color: rgb(255, 255, 255);
+    font-size: 32px;
+    color: rgb(125, 125, 125);
 }
 
 .add {
-    font-size: 60px;
-    color: rgb(255, 255, 255);
+    font-size: 45px;
+    color: rgb(125, 125, 125);
 }
 .nav-icon:active {
   color: #0250c5
 }
 
 /* BODY */
+
+
+button {
+   color: #0250c5;
+  border-style: none;
+  border: solid #0250c5 1px;
+  font-size: 90%;
+  background: none;
+  margin: 10px 0 0 14px;
+  width: 44%;
+  height: 18%;
+
+}

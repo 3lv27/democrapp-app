@@ -1,0 +1,43 @@
+div {
+    padding: 25px;
+    height: 3vh;
+}
+
+input {
+    height: 5vh;
+    width: 60vw;
+    margin-bottom: 10px;
+}
+
+button {
+     color: #0250c5;
+     border-style: none;
+     border: solid #0250c5 1px;
+     background: transparent;
+     margin-left: 3px;
+     height: 4vh;
+
+}
+
+button:hover {
+    border: none;
+    background-image: linear-gradient(to right, #d43f8d 20%, #0250c5 100%);
+    color: #fff;
+}
+
+#add {
+    margin-left: 26px;
+    display: block;
+    padding-top: 30px;
+    color: #0250c5;
+
+}
+
+#submit {
+    color: #0250c5;
+     border-style: none;
+     border: solid #0250c5 1px;
+     background: transparent;
+     width: 74vw;
+     height: 5vh;
+}

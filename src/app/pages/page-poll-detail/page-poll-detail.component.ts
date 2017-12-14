@@ -42,7 +42,8 @@ export class PagePollDetailComponent implements OnInit {
   handleVote(answer: number) {
     this.pollService.submitVote(this.poll._id, answer)
       .subscribe(
-      () => { this.userAlreadyVoted = true; },
+      () => { this.userAlreadyVoted = true; 
+      this.poll.votes.push({answer: answer, user: this.user._id}); },
       (err) => this.error = err.json().error
       );
   }

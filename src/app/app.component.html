@@ -1,7 +1,12 @@
 <header class="site-header">
 
   <h1 class="site-title">
-    <a [routerLink]="['/']">DemocrApp</a>
+   
+    <a [routerLink]="['/']">
+      <img src="./assets/images/democrapp-logo.png" alt="Democrap Logo">
+      DemocrApp
+    
+    </a>
   </h1>
 
   <div [ngClass]="{'is-user': user, 'is-anon': anon}">
@@ -10,9 +15,11 @@
     </div>
      <div class="user" *ngIf="!loading && !!user"> 
       <a (click)="profile()"> Hello {{user.name}}!</a>
-      <a (click)="logout()">logout</a>
+      <a (click)="logout()">
+        <span class="fas fa-power-off"></span>
+      </a>
     </div>
-    <div *ngIf="!loading && anon">
+    <div class="no-user" *ngIf="!loading && anon">
       <a (click)="login()">login</a>
       <a (click)="signup()">signup</a>
     </div>
@@ -44,8 +51,8 @@
       
     </div>
     <div *ngIf="!loading && anon">
-      <a [routerLink]="['/polls']">see polls</a>
-      <a [routerLink]="['/signup']">start now</a>
+      <button [routerLink]="['/polls']">discover polls</button>
+      <button [routerLink]="['/signup']">start now</button>
     </div>
   </nav>
 </footer>

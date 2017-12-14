@@ -1,0 +1,23 @@
+div {
+    padding: 5vh;
+    height: 3vh;
+}
+
+input {
+    height: 5vh;
+    width: 60vw;
+}
+
+button {
+    background: transparent;
+    border: 1px solid rgb(137, 137, 137);
+    height: 5vh;
+    width: 60vw;
+    color: rgb(137, 137, 137)
+}
+
+button:hover {
+    border: none;
+    background-image: linear-gradient(to right, #d43f8d 20%, #0250c5 100%);
+    color: #fff;
+}

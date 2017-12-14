@@ -14,11 +14,11 @@
     <button (click)="handleDelete(option)">Delete</button>
   </div>
   
-  <a type="button" (click)="addOption()">Add option</a>
+  <a  id="add" type="button" (click)="addOption()">Add option</a>
   
 
   <div class="field submit">
-    <button type="submit">Submit</button>
+    <button id="submit" type="submit">Submit</button>
     <div *ngIf="feedbackEnabled && myForm.invalid">
       <p class="validation">there are errors in the form, please review the fields</p>
     </div>
