@@ -1,16 +1,18 @@
 <form (ngSubmit)="submitForm(myForm)" #myForm="ngForm" novalidate>
 
   <div class="field" [ngClass]="{'has-error': feedbackEnabled && myQuestion.errors}">
-    <input type="text" name="question" [(ngModel)]="question" #myQuestion="ngModel" [disabled]="processing" placeholder="Your Question"
-    />
-    <div *ngIf="feedbackEnabled && myQuestion.errors">
+    <input type="text" name="question" [(ngModel)]="question" #myQuestion="ngModel" [disabled]="processing" placeholder="Your Question" required minlength="6"/>
+    <!-- <div *ngIf="feedbackEnabled && myQuestion.errors">
       <p *ngIf="myQuestion.errors.required" class="validation">A question is required</p>
-    </div>
+    </div> -->
   </div>
 
 
   <div *ngFor="let option of formOptions" class="field" [ngClass]="{'has-error': feedbackEnabled}">
-    <input type="answer" [(ngModel)]="option.text" placeholder="Option" [ngModelOptions]="{standalone: true}" />
+    <input type="answer" [(ngModel)]="option.text" placeholder="Option" required minlength="1" [ngModelOptions]="{standalone: true}" />
+    <!-- <div *ngIf="feedbackEnabled && myQuestion.errors">
+      <p *ngIf="myQuestion.errors.required" class="validation">An answer is required</p>
+    </div> -->
     <button (click)="handleDelete(option)">Delete</button>
   </div>
   
@@ -20,7 +22,7 @@
   <div class="field submit">
     <button id="submit" type="submit">Submit</button>
     <div *ngIf="feedbackEnabled && myForm.invalid">
-      <p class="validation">there are errors in the form, please review the fields</p>
+      <p class="validation">There are errors in the form, the fields can not be empty</p>
     </div>
   </div>
 </form>

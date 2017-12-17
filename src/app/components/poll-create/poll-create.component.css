@@ -25,6 +25,11 @@ button:hover {
     color: #fff;
 }
 
+.validation {
+    font-size: 12px;
+    margin: 0px; 
+}
+
 #add {
     margin-left: 26px;
     display: block;

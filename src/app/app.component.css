@@ -53,7 +53,10 @@ img {
   position: fixed;
   bottom: 0;
   margin-bottom: -9px;
+  z-index: 9999;
 }
+
+
 
 .nav {
     height: 45px;
@@ -81,13 +84,29 @@ img {
 
 
 button {
-   color: #0250c5;
+  color: #0250c5;
+  font-weight: bold;
   border-style: none;
-  border: solid #0250c5 1px;
+  border: solid #0250c5 2px;
   font-size: 90%;
-  background: none;
-  margin: 10px 0 0 14px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: -10px 0 0 14px;
   width: 44%;
   height: 18%;
+  padding: 9px;
+
+}
+
+button:hover {
+  color: #fff;
+  font-weight: bold;
+  border-style: none;
+  border: solid #0250c5 2px;
+  font-size: 90%;
+  background:#0250c5;
+  margin: -10px 0 0 14px;
+  width: 44%;
+  height: 18%;
+  padding: 9px;
 
 }

@@ -11,8 +11,8 @@ html {
 }
 body {
  min-height: 100vh;
- margin: 0 0 60px 0;
-  background-image: linear-gradient(to right, #d43f8e2d 20%, #0250c532 100%);
+ margin: 0px;
+ background-image: linear-gradient(to right, #d43f8e2d 20%, #0250c532 100%);
  
 }
 

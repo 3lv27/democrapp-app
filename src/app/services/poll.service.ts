@@ -19,7 +19,6 @@ export class PollService {
   createPoll(poll) {
     const options = new RequestOptions();
     options.withCredentials = true;
-    
     return this.http.post(apiUrl + '/polls', poll, options)
       .map(res => {
         return res.json();

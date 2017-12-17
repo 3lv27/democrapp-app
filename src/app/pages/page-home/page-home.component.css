@@ -3,11 +3,26 @@
     display: flex;
     background-position:  center center;
     background-size: cover;
-    height: 515px;
+    height: 580px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
+}
+
+ /* DESKTOP */
+@media (min-width: 400px) {
+  .first {
+    background-image: url(https://hdwallsource.com/img/2014/9/city-background-18299-18763-hd-wallpapers.jpg);
+    display: flex;
+    background-position:  center center;
+    background-size: cover;
+    height: 650px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
 }
 
 p {
